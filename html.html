@@ -6,32 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    
-    #div1{
-        width: 200px;
-        height: 200px;
-        padding-top:10px;
-        background:red;
-        position: absolute;
-        z-index: 1;
-    }
-    #div2{
-       width: 200px;
-       height: 200px;
-       padding-top: 20px;
-       background:blue;
-       position: absolute;
-       z-index: 2;
-    }
-    
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: pink;
+        }
+        img{
+            /* display: block; */
+            /* margin: 0 auto; */
+            width: 200px;
+            /* position: relative;
+            left: 50%;
+            margin-left: -100px; */
+        }
+        #container{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            /* text-align: center; */
+            background: aqua;
+        }
     </style>
-    
 </head>
 <body>
+    <div id="wrapper"></div>
 
-    <div id="div1">123456</div>
-    <div id="div2">000000</div>
+    <div id="container">
+        <img src="../images/pic.jpg" alt=""> 
+    </div>
+
 </body>
-
-
-</html
+</html>

@@ -1,0 +1,12 @@
+.nav{
+    
+    background: #fab0cd;
+   
+}
+.nav img{
+    display: block;
+    /* img 行级 */
+    margin: 0 auto;
+    /* 图片居中展示 */
+}
+
