@@ -2,22 +2,78 @@
     padding: 0;
     margin: 0;
 }
+ul{
+    list-style:none;
+}
+
+ /* 导航容器右浮动 */
 .nav-u1{
     font-size: 13px;
     line-height:24px;
+    position:absolute;
+    right:0;
+    top :0;
     float:right;
     margin: 19px 0 5px ;
     padding: 0 96px 0 0 ;
-    /* 导航容器右浮动 */
 }
+ /* 导航标左浮动 */
 .nav-u1-main{
+    display:block;
     float: left;
+    color:#333;
+    font-size:13px;
+    font-weight:700px;
+    line-height:24px;
     margin-left: 20px;
-    /* 导航标左浮动 */
+    text-decoration:underline;
 }
+/* 设置小三角箭头 */
+.u1-st-arrow{
+    display: inline-block;
+    border:4px solid #f0f0f0;
+    border-left-color:transparent;
+    border-right-color: transparent;
+    border-top-color:transparent;
+    position:absolute;
+    top:17px;
+    left:373px;
+
+}
+/* 设置下拉列表容器 */
+.bdarrow{
+    display:none;
+    width:70px;
+    position:absolute;
+    top:24px;
+    left:340px;
+    margin:0 auto;
+    font-size:12px;
+    background-color:#ffffff;
+    border:1px solid #d1d1d1
+
+}
+.nav-u1-st >a{
+    color:#000000;
+}
+/* 设置下拉列表字体属性 */
+.bdarrow a{
+    display:block;
+    padding:0 9px;
+    text-align:center;
+    color:#333;
+    text-decoration:none;
+}
+.bdarrow a:hover{
+    color:#fff;
+    z-index:2;
+    background-color:#3388ff;
+}
+.nav-u1-st:hover .bdarrow{
+    display:block;
+}
+/* (更多产品)按钮属性 */
 .nav-u1-btn{
-    /* (更多产品)按钮属性 */
-    position: absolute;
     right:10px;
     width:60px;
     height:23px;
@@ -25,39 +81,159 @@
     margin-right:2px;
     background:#38f;
     color: #fff;
-    border: 1px solid #38f;
+    border-bottom: 1px solid #38f;
     font-size:13px;
+    position:absolute;
+    text-align: center;
+    text-decoration:none;
 }
-.nav-u1-list{
+.nav-u1-btn:hover{
+    color:#333;
+    background-color:#f0f0f0;
+    width:66px;
+    height:43px;
+    /* line-height:43px; */
+    
+    margin:0 auto;
+    border-bottom: 1 solid #f0f0f0 ;
+    font-size:13px;
+   
+}
+.nav-u1-hide{
+    width:70px;
+    display:none;
+    top:30px;
+    right:20px;
+    margin:0 auto;
+    border-left:1px solid #e4e4e4;
+}
+.nav-u1-hide>a:hover{
+    display:block;
+}
+/* 隐藏a标签属性 */
+.nav-u1-hide>a{
+    display:block;
+    width:66px;
+    height:76px;
+    font-size:12px;
+    text-align:center;
+    margin:0 auto;
+    border-bottom:1px solid #f0f0f0;
+    color:#666;
+    text-decoration:none;
+    overflow: hidden;
+}
+/* 隐藏栏a标签下划线 */
+.nav-u1-btn:hover a{
+    text-decoration:none;
+    color:#666666
+}
+.nav-u1-hide:hover>a{
+    text-decoration:none;
+    color:#666666
+}
+/* 更多产品隐藏按键 */
+.nav-u1-btn:hover  .nav-u1-hide{
+    display:block;
+    background-color:#f9f9f9;
+}
+/* 鼠标划入更多产品属性 */
+.nav-u1-btn:hover{
+    /* background-color:#f9f9f9;
+    border-left:1px solid #e4e4e4; */
+
+
+}
+/* 导航按键字体加粗 */
+ .nav-u1-list{
     font-weight: 700;
-    /* 导航按键字体加粗 */
+ }
+/* 图片插入 */
+.photo1{
+    width:36px;
+    height:36px;
+    line-height:36px;
+    display:block;
+    margin: 10px auto 5px;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/nuomi_7f5cd35.png);
+    background-size: cover;
 }
+.photo2{
+    width:36px;
+    height:36px;
+    line-height:36px;
+    margin: 10px auto 5px;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/qqjt_9809ca8.png);
+    background-size: cover;
+}
+.photo3{
+    width:36px;
+    height:36px;
+    line-height:36px;
+    margin: 10px auto 5px;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/image_55b5909.png);
+    background-size: cover;
+}
+.photo4{
+    width:36px;
+    height:36px;
+    line-height:36px;
+    margin: 10px auto 5px;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/zhidao_cbf2aff.png);
+    background-size: cover;
+}
+.photo5{
+    width:36px;
+    height:36px;
+    line-height:36px;
+    margin: 10px auto 5px;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/wenku_aaf198d.png);
+    background-size: cover;
+}
+.photo6{
+    width:36px;
+    height:36px;
+    line-height:36px;
+    margin: 10px auto 5px;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/fengyunbang_1986a40.png);
+    background-size: cover;
+}
+
+.imgitem{
+    display:block;
+    width:36px;
+    height:36px;
+} 
 .nav-u1>a{
     color: #000000;
 }
 .nav-u1>a:hover{
     color:#00c;
 }
+.nav-u1-st>a:hover{
+    color:#00c;
+}
+/* 图片尺寸以及位置确定 */
 .lg>img{
     width: 270px;
     height:129px;
     display: block;
-    position: relative;
-    left: 50%;
-    margin-left:-135px; 
-    /* 图片尺寸以及位置确定 */
-
-    
-  }
-  .lg{
+    margin:0 auto;
+}
+.lg{
       width:100%;
       height:129px;
-      padding-top: 100px;
+      padding-top:100px;
+      
+      
+      
  }
 .ipt{
     /* 输入框属性 */
     width: 530px;
-    height: 30px;}
+    height: 30px;
+    float:left;
+}
 .btn{
     /* (百度一下)按钮属性 */
     width: 100px;
@@ -66,31 +242,36 @@
     color: white;
     font-size: 15px;
     letter-spacing:1px;
-   margin: 0;
-   border: 0;
-   border-bottom:1px solid #2d78f4
+    margin: 0;
+    border: 0;
+    border-bottom:1px solid #2d78f4;
+    float:left;
 }
-.fd{
-    text-align: center;
-    /* 搜索框居中 */
+/* 搜索框居中 */
+#fd{
+    display: block;
+    width: 780px;
+    height: 30px;
+    position: relative;
+    left:30%;
+    
 }
+ /* 二维码 */
 #QR{
-    /* 二维码 */
     position: absolute;
     bottom: 140px;
     width:100%;
     text-align:center;
 }
+/* 二维码居中 */
 #QR img{
     display:block;
     margin:0 auto;
-    /* 二维码居中 */
 }
 #QR p{
     font-size:700;
     color:#666;
 }
-
 .wrapper{
     position: absolute;
     width:100%;
@@ -109,6 +290,7 @@
 #jgwab{
     margin-left:19px;
 }
+
 
 
 
