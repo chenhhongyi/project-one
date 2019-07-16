@@ -1,4 +1,4 @@
 var a,b;
 a=10;
 b=20;
-alert(a+b);
+console.log('a+b');

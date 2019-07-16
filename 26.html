@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for( i=1000;i<=9999;i++)
+        {
+           j=Math.floor(i/1000);
+           k=Math.floor(i/100%10);
+           l=Math.floor(i/10%100%10);
+           if(i%13==0 && j==k+l){
+               document.write(i+' ');
+           }
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
