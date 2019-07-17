@@ -8,8 +8,10 @@
 </head>
 <body>
     <script>
+        // 闰年平年判定
         var date = new Date();
         var year = date.getFullYear();
+        // 闰年判断条件
         if(year%4==0&&year%100!=0||year%400==0){
             document.write('闰年');
         }

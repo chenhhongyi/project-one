@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style:none;
+        }
+        #content{
+            width:750px;
+            margin: 0 auto;
+            /* left right container wrapper 父元素定位 */
+            position:relative;
+            overflow:hidden;
+        }
+        #container{
+            width:3750px;
+            height:291px;
+            position:relative;
+            margin-top:100px;
+            -webkit-transition:left 0.5s ease;
+            transition:left 0.5s ease;
+        }
+        #container>img{
+            display:block;
+            float:left;
+           
+        }
+        #wrapper>li{
+            width:30px;
+            height:30px;
+            float:left;
+            margin:0 10px;
+            text-align:center;
+            line-height:30px;
+            border-radius:5px;
+            color:#fff;
+            background-color:rgba(0,0,0,0.6);
+            cursor: pointer;
+        }
+        #wrapper{
+            height:30px;
+            position:absolute;
+            top: 350px;
+            right:100px; 
+        }
+        #wrapper>.selected{
+            background-color:#ff0036;
+        }
+        #left{
+            display:inline-block;
+            width:50px;
+            height:50px;
+            position:absolute;
+            top: 230px;
+            left:60px;
+            
+            background-color:rgba(0,0,0,0.6);
+        }
+        #left>div{
+            width:27px;
+            height:27px;
+            border-left:5px solid #fff;
+            border-bottom:5px solid #fff;
+            -webkit-transform:rotate(45deg);
+            transform:rotate(45deg);
+            position:absolute;
+            top:10px;
+            left:10px;
+        }
+        #right{
+            display:inline-block;
+            width:50px;
+            height:50px;
+            position:absolute;
+            top:230px;
+            right:60px;
+            background-color:rgba(0,0,0,0.6);
+        }
+        #right>div{
+            width:27px;
+            height:27px;
+            border-left:5px solid #fff;
+            border-bottom:5px solid #fff;
+            -webkit-transform:rotate(-135deg);
+            transform:rotate(-135deg);
+            position:absolute;
+            top:10px;
+            left:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="container">
+            <img class="active" src="./img/1.jpg" alt="">
+            <img src="./img/2.jpg" alt="">
+            <img src="./img/3.jpg" alt="">
+            <img src="./img/4.jpg" alt="">
+            <img src="./img/5.jpg" alt="">
+        </div>
+        <ul id="wrapper">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <span id="left">
+            <div></div>
+        </span>
+        <span id="right">
+            <div></div>
+        </span>
+
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName("li");
+        var aImg = document.getElementsByTagName("img");
+        var oContainer = document.getElementById('container');
+        var oRight = document.getElementById('right');
+        var oLeft = document.getElementById('left');
+        var tag=0;
+        var Timer;
+        function changeSilder(_tag){
+            for( var j=0;j<aLi.length;j++){
+                aLi[j].className = '';
+            }
+            aLi[_tag].className = 'selected';
+            oContainer.style.left=-750*_tag+'px';
+        }
+        
+        for(var i= 0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aLi[i].onclick = function(){
+                changeSilder(this.index)
+                //     for( var j=0;j<aLi.length;j++){
+                //         aLi[j].className = '';
+                //     }
+                // aLi[this.index].className = 'selected';
+                // oContainer.style.left=-750*this.index+'px';
+            }
+        }
+        oRight.onclick = function(){
+            tag++;
+            if(tag==aLi.length){
+                tag=0;
+            }
+           changeSilder(tag);
+        }
+        oLeft.onclick = function(){
+            tag--;
+            tag=tag==-1?aLi.length:tag;
+            changeSlider(tag);
+            
+        }
+        
+        Timer=setInterval(function(){
+            oRight.onclick();
+        },1500);
+        oContainer.onmouseover=function(){
+            clearInterval(Timer);
+        }
+        oContainer.onmouseout=function(){
+            Timer=setInterval(function(){
+                 oRight.onclick();
+            }
+            ,1500);
+        }
+
+        
+    </script>
+</body>
+</html>

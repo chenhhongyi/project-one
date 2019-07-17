@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style:none;
+        }
+        #content{
+            width:750px;
+            margin:0 auto;
+            position:relative;
+        }
+        #container{
+            width:750px;
+            height:100%;
+            margin: 0 auto ;
+        }
+        #wrapper>li{
+            width:30px;
+            height:30px;
+            float:left;
+            margin:0 10px;
+            text-align:center;
+            line-height:30px;
+            border-radius:5px;
+            color:#fff;
+            background-color:rgba(0,0,0,0.6);
+            cursor: pointer;
+        }
+        #container>img{
+            display:none;
+        }
+        #container>.active{
+            display:block;
+        }
+        #wrapper{
+            height:30px;
+            position:absolute;
+            top: 250px;
+            right:400px; 
+        }
+        #wrapper>.selected{
+            background-color:#ff0036;
+        }
+        #left{
+            display:inline-block;
+            width:50px;
+            height:50px;
+            position:absolute;
+            top: 100px;
+            left:0;
+            background-color:rgba(0,0,0,0.6);
+        }
+        #left>div{
+            width:27px;
+            height:27px;
+            border-left:5px solid #fff;
+            border-bottom:5px solid #fff;
+            -webkit-transform:rotate(45deg);
+            transform:rotate(45deg);
+            position:absolute;
+            top:10px;
+            left:10px;
+        }
+        #right{
+            display:inline-block;
+            width:50px;
+            height:50px;
+            position:absolute;
+            top: 100px;
+            right:0px;
+            background-color:rgba(0,0,0,0.6);
+        }
+        #right>div{
+            width:27px;
+            height:27px;
+            border-left:5px solid #fff;
+            border-bottom:5px solid #fff;
+            -webkit-transform:rotate(-135deg);
+            transform:rotate(-135deg);
+            position:absolute;
+            top:10px;
+            left:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="container">
+            <img class="active" src="./img/1.jpg" alt="">
+            <img src="./img/2.jpg" alt="">
+            <img src="./img/3.jpg" alt="">
+            <img src="./img/4.jpg" alt="">
+            <img src="./img/5.jpg" alt="">
+        </div>
+        <ul id="wrapper">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <span id="left">
+            <div></div>
+        </span>
+        <span id="right">
+            <div></div>
+        </span>
+
+    </div>
+    <script>
+        var aImg = document.getElementsByTagName('img');
+        var aLi = document.getElementsByTagName('li');
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+        var oContent = document.getElementById('content')
+        var tag=0;
+        var Timer;
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onclick=function(){
+                tag=this.index;
+                changeSlider(this.index);
+            } 
+        }
+        function changeSlider(_tag){
+            for(j=0;j<aLi.length;j++){
+                aLi[j].className= '';
+                aImg[j].className= '';
+            }   aLi[_tag].className='selected';
+                aImg[_tag].className='active';  
+        }
+        
+        oRight.onclick=function(){
+            tag++;
+            if(tag==aLi.length){
+                tag=0;
+            }
+            changeSlider(tag);
+            // for(j=0;j<aLi.length;j++){
+            //         aLi[j].className= '';
+            //         aImg[j].className= '';
+            // } aLi[tag].className='selected';
+            //      aImg[tag].className='active';  
+        }
+        oLeft.onclick=function(){
+            tag--;
+            if(tag==-1){
+                tag=aLi.length-1;
+            }
+            changeSlider(tag);
+        }
+        Timer=setInterval(function(){
+            oRight.onclick()
+        },1000);
+         oContent.onmouseover=function(){
+                clearTimeout(Timer);
+        }
+        oContent.onmouseout=function(){
+            Timer=setInterval(function(){
+            oRight.onclick()
+        },1000);
+        }
+        
+        
+        
+        
+        
+         
+        
+            
+
+
+
+        
+    
+    
+    
+    
+    </script>
+</body>
+</html>

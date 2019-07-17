@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 750px;
+            height: 216px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #slider>img{
+            display:block; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transition:opacity 0.5s ease;
+            transition:opacity 0.5s ease;
+        }
+        #slider{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #pointer{
+            width: 150px;
+            height: 10px;
+            margin-left:-75px;
+            position: absolute;
+            top: 250px;
+            left: 50%;
+        }
+        #pointer>li{
+            float: left;
+            width: 30px;
+            height: 10px;
+            margin:0 10px;
+            background-color: rgba(0,0,0,0.7);
+            cursor:pointer;
+        }
+        #pointer>.active{
+            background-color:#fff;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="slider">
+            <img style="opacity:1" src="./img/1.jpg" alt="">
+            <img style="opacity:0" src="./img/2.jpg" alt="">
+            <img style="opacity:0" src="./img/3.jpg" alt="">
+        </div>
+        <ul id="pointer">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName("li");
+        var aImg = document.getElementsByTagName("img");
+        for(var i= 0; i<aLi.length; i++){
+            aLi[i].index = i;
+            // 鼠标划入方法
+            aLi[i].onmouseover=function(){
+                for(j= 0; j<aLi.length; j++){
+                    // class重置及透明度0
+                        aLi[j].className = '';
+                        aImg[j].style.opacity = 0;
+                    }
+                    aLi[this.index].className = "active";
+                    aImg[this.index].style.opacity = 1;
+                }
+            }
+    
+    
+    
+    
+    </script>
+</body>
+</html>
