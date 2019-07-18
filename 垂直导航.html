@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        h1{
+            width:180px;
+            height:30px;
+            font-size:18px;
+            background-color:#ff0036;
+            color:#fff;
+        }
+        li{
+            width:178px;
+            height:30px;
+            border:1px solid #333;
+            list-style:none;
+        }
+        ul{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>第一阶段</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+    </ul>
+    <h1>第二阶段</h1>
+    <ul>
+        <li>ES6</li>
+        <li>Vue</li>
+        <li>React</li>
+    </ul>
+    <script>
+        var oH1 = document.getElementsByTagName('h1');
+        var oUl = document.getElementsByTagName('ul');
+        for(var i=0;i<oH1.length; i++) {
+            oH1[i].index = i;
+            oH1[i].flag = false;
+            oH1[i].onclick = function() {
+                // console.log( oUl[this.index])
+                if(this.flag){
+                    oUl[this.index].style.display = 'none';
+                }
+                else{
+                    oUl[this.index].style.display = 'block';
+                    
+                }
+                console.log(this.flag)
+                this.flag = !this.flag;
+
+            }
+        }
+    
+    
+    
+    </script>
+</body>
+</html>
