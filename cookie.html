@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //
+    document.cookie = 'name=xiaoming';
+    var date = new Date();
+    date.setDate(date.getDate() + 1); 
+    console.log(date)
+    console.log(date.toUTCString());
+    //toUTCString 日期对象转字符串  进行拼接
+    document.cookie = 'text=12345;expires = '+date.toUTCString()
+    //添加cookie方法 设置
+    function setCookie(key,value,expires) {
+        var date = new Date();
+        date.setDate(date.getDate() +expires*1);
+        document.cookie = key+'='+value+';expires='+date.toUTCString()
+    } 
+    setCookie('text2','123123','2')
+    setCookie('text2',null,'2')
+    
+    //删除cookie
+    function deleteCookie(key){
+        var date = new Date();
+        date.setDate(date.getDate() -1);
+        document.cookie = key + '=null;expires=' +date.toUTCString();
+    }
+    // deleteCookie('text2')  删除
+    //获取
+    function getCookie(key){
+        var tmp = document.cookie;
+        tmp = tmp.split(';')
+        //tmp = 'name=...; text=...'
+        //["name=..."," text=111"]
+        // console.log(tmp)
+        for(var i=0;i<tmp.length;i++){
+            //['name','...']
+            var arr = tmp[i].split('=')
+            // console.log(arr);
+            //如果key与输入值相等 输出值
+            if(arr[0].trim()== key){
+                return arr[1];
+            }
+        }
+    }
+    console.log(getCookie('text'));
+
+    if(getCookie(isNew)){
+
+    }
+    else{
+        setCookie('isNew','true','300')
+    }
+    
+    </script>
+</body>
+</html>

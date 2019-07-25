@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container{
+            position: relative;
+        }
+        #container>div{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        #container div:nth-child(1){
+            border: 10px solid #0000ff;
+            top: 0;
+            left: 0;
+        }
+        #container div:nth-child(1)::after{
+            content: '';
+            display:block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            border: 10px solid blue;
+            z-index: 2;
+            border-right-color: blue;
+            border-bottom:transparent;
+        }
+        #container div:nth-child(2){
+            border: 10px solid  #000000;
+            top:0;
+            left: 230px;
+        }
+        #container div:nth-child(2)::after{
+            content: '';
+            display:block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left :-10px;
+            border: 10px solid black;
+            z-index: 2;
+           
+            border-left-color:transparent;
+            
+        }
+        #container div:nth-child(3){
+            border: 10px solid  red;
+            top:0;
+            left: 460px;
+        }
+        #container div:nth-child(3)::after{
+            content: '';
+            display:block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left:-10px;
+            border: 10px solid red;
+            z-index: 2;
+            border-left-color:transparent;
+        }
+        #container div:nth-child(4){
+            border: 10px solid yellow;
+            top: 110px;
+            left: 110px;
+        }
+        #container div:nth-child(5){
+            border: 10px solid green;
+            top: 110px;
+            left: 340px;
+        }
+        #container div:nth-child(5)::after{
+            content: '';
+            display:block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            border: 10px solid green;
+            z-index: 2;
+            border-right-color:transparent;
+            border-top-color:transparent;
+            
+        }
+        
+
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

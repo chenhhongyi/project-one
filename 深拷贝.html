@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var person = {
+            name:'wudi',
+            age : '18',
+            score : {
+                math :'100',
+                English:'60',
+                sport :{
+                    run:0,
+                    sleep:100
+
+                }
+            }
+        }
+        //深拷贝
+        function deepClone(obj){
+            //判断是否为对象 不是对象 直接返回 
+            if(obj && typeof(obj) ==='object'){
+                //定义容器接受对象内容 判断是数组或对象
+                var objClone = Array.isArray(obj) ? []:{};
+                //对象进行循环
+                    for(key in obj){
+                        //如果对象内的项为对象 重新进行接受
+                        if(obj[key]&&typeof(obj[key]) === 'object'){
+                            //递归赋值
+                            objClone[key] = deepClone(obj[key]);
+                        }
+                        //是数组直接赋值
+                        else{
+                            objClone[key] = obj[key];
+                        } 
+                    }
+            }
+            else{
+                //非数组或非对象 直接赋值返回
+                objClone = obj
+            }
+            return objClone;
+        }
+        var a=deepClone(person);
+        console.log(a)
+        console.log(person)
+
+        
+    </script>
+</body>
+</html>

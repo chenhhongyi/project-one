@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            }
+        li{
+            list-style:none;
+        }
+        .clearfix::after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+        .container{
+            width:300px;
+            margin:50px auto;
+        }
+        .menu li{
+            float:left;
+            width:100px;
+            height:20px;
+            color:#ff8600;
+            text-align:center;
+            line-height:20px;
+        }
+        .menu  li.selected{
+            background-color:#ff8600;
+            color:#fff;
+        }
+        #wrapper div{
+            display:none;
+            width:300px;
+            height:300px;
+            color:#fff;
+            background-color:#ff8600;
+        }
+        #wrapper>div.active{
+            display:block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jquery.js"></script>
+    <div class="container">
+        <div class="contant">
+            <ul class="menu clearfix">
+                <li class="selected">菜单1</li>
+                <li>菜单2</li>
+                <li>菜单3</li>
+            </ul>
+        </div>
+        <div id="wrapper">
+            <div class="active">内容1</div>
+            <div>内容2</div>
+            <div>内容3</div>
+        </div>
+    </div>
+    <script>
+       $('.menu li').on('click',function(){
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('#wrapper div').eq($(this).index()).addClass('active').siblings().removeClass('active');
+       })
+    
+    </script>
+</body>
+</html>

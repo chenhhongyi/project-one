@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        header,h4,footer{
+            width: 980px;
+            height: 80px;
+            background:#f0f0f0;
+            text-align: center;
+            line-height: 80px;
+            margin: 20px auto;
+        }
+        #first{
+            display: block;
+        }
+        #second{
+            display: none;
+        }
+        #third{
+            display: none;
+        }
+        #content{
+            width: 980px;
+            margin: 0 auto;
+        }
+        #content>img{
+            width: 100%;
+        }
+        #container{
+            width: 980px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #left{
+            width: 630px;
+            height: 200px;
+            background: aqua;
+            float: left;
+            display: table;
+        }
+        #right{
+            width: 300px;
+            height: 200px;
+            background: #ff8900;
+            float: right;
+        }
+        #left>p{
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            
+        }
+        @media screen and (max-width:960px){
+            header,h4,footer{
+                width: 100%;
+            }
+            #content{
+                width: 100%;
+            }
+            #first{
+                display: none;
+            }
+            #second{
+                display: block;
+            }
+            #container{
+                width: 100%;
+            }
+            #left{
+                width: 60%;
+            }
+            #right{
+                width: 40%;
+            }
+        }
+        @media screen and (max-width:480px){
+            #second{
+                display: none;
+            }
+            #third{
+                display: block;
+            }
+            #right{
+                width: 100%;
+            }
+            #left{
+                width: 100%;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+    <header>页头</header>
+    <h4>标题</h4>
+    <div id="content">
+        <img id="first" src="./img/01.jpg" alt="">
+        <img id="second" src="./img/01_s_2x.jpg" alt="">
+        <img id="third" src="./img/01_s.jpg" alt="">
+    </div>
+    <div id="container">
+        <div id="left">
+            <p>
+                 That is very helpful to you if you want to do a good job in your study. Second, attending classes regularly is a way of showing respect to your teachers ,too. Your teachers will feel bad if the students do not attend their classes, which in turn will affect their teaching and be no good for the students. Third, attending classes regularly will help to form a good habit of punctuality,which is of great importance for the students to do a good job in the future.
+            </p></div>
+        <div id="right"></div>
+    </div>
+    <footer>页尾</footer>
+</body>
+</html>

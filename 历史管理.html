@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>change hash</button>
+    <div></div>
+    <script>
+        var oBtn = document.querySelector('button');
+        var oDiv = document.querySelector('div');
+        oBtn.onclick = function() {
+            // location.hash = Math.random();
+            history.pushState(Math.random(),'');
+        }
+        //onhashchange监听hash改变的方法
+        window.onhashchange = function() {
+            console.log(location.hash);
+            oDiv.innerHTML = location.hash;
+        }
+        window.onpopstate = function(e) {
+            console.log(e.state);
+        }
+    
+    
+    </script>
+</body>
+</html>

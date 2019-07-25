@@ -4,43 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .container{
-            width:800px;
-            height:300px;
-        }
-        .left{
-            width:100px;
-            height:300px;
-            float:left;
-            background-color:#000;
-        }
-        .right{
-            width:100px;
-            height:300px;
-            float:right;
-            background-color:red;
-        }
-        .center{
-            width: 600px;
-            height:300px;
-            margin:0 100px;
-
-
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="center"></div>
-    </div>
+    <script src="./jquery.js"></script>
+    <button>添加</button>
+    <div id="div1"></div>
+    <ul>
+        <li>1</li>
+        <li  id="li2">2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        $('#li2+li').css('background','red')
+        
 
+       
+    </script>
 </body>
 </html>

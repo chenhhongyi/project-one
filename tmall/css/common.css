@@ -478,11 +478,8 @@ ul{
 }
 #slider-img>img{
     display:none;
-    /* display:block; */
     width:100%;
     height:500px;
-    /* -webkit-transition:display 0.5s ease;
-    transition:display 0.5s ease; */
 }
 #slider-img img.selected{
     display:block;
@@ -528,7 +525,6 @@ ul{
     background-color:#fff;
     color:#333;
     vertical-align:middle;
-
 }
 .content-head-cn{
     margin-left: 10px;
@@ -597,6 +593,7 @@ ul{
 }
 .brand-list-img>img{
     width:80%;
+    line-height:108px;
 }
 .brand-list-cover{
     display:block;
@@ -631,7 +628,6 @@ ul{
     border-radius:10px;
     color:#fff;
     background-color:#ff0036;
-
 }
 
 

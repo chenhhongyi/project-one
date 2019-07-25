@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function setCookie(key,value,expires) {
+        var date = new Date();
+        date.setDate(date.getDate() +expires*1);
+        document.cookie = key+'='+value+';expires='+date.toUTCString()
+    } 
+    setCookie('text2','123123','2')
+    // setCookie('text2',null,'2')
+    function deleteCookie(key){
+        var date = new Date();
+        date.setDate(date.getDate() -1);
+        document.cookie = key + '=null;expires=' +date.toUTCString();
+    }
+    deleteCookie('text2');
+    </script>
+</body>
+</html>
